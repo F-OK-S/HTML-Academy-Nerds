@@ -71,7 +71,10 @@ body {
 }
 .container {
   margin: 0 auto;
-  width: 960px; /*уточнить по макету*/
+  width: 900px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 25px;
 }
 
 .logo {
@@ -128,5 +131,11 @@ width: 300px; /*уточнить по макету*/
   float: left;
 }
 .promotion {
+  float: left;
+}
+.promo img {
+  float: right;
+}
+.promo-description {
   float: left;
 }
