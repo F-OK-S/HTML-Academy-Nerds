@@ -56,13 +56,38 @@ main {
 .promotion {
   background-color: rgba(200,100,100,0.5);
 }
+.map-contacts {
+  height: 240px;
+}
 /*Основное оформление*/
 
 body {
   padding: 0;
   margin: 0;
+  font-family: 'Roboto', 'Arial', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 22px;
+  color: #283136; /*цвеи шрифта почему-то нелогисно называется color, а не font-color*/
 }
 
+.main-navigation a {
+  color: #000000;
+  text-decoration: none;
+}
+/*ЕСЛИ ЭТО РАСКОММЕНТИРОВАТЬ, ТО ТЕКСТ ""Мир никогда не будет прежним после того, как увидит ваш сайт!" станет тоже белым :()"*.
+/*a {
+  color: #ffffff;
+  text-decoration: none;
+}*/
+
+
+h2 {
+  font-size: 18px;
+  line-height: 30px;
+  color: #000000;
+  text-transform: uppercase;
+}
 .clearfix::after {
   content: "";
   display: table;
@@ -71,10 +96,11 @@ body {
 }
 .container {
   margin: 0 auto;
-  width: 900px;
+  width: 860px;
   padding-left: 10px;
   padding-right: 10px;
   padding-top: 25px;
+  padding-bottom: 25px;
 }
 
 .logo {
@@ -82,6 +108,13 @@ body {
 }
 .main-navigation{
   float: left;
+
+  font-family: 'Roboto', 'Arial', sans-serif;
+  font-size: 14px;
+  line-height: 30px;
+  color: #000000;
+  text-transform: uppercase;
+
 }
 .main-navigation li {
   display: inline-block;
@@ -96,9 +129,16 @@ body {
 .promo {
   clear: both;
 }
+.promo-description b {
+   font-size: 36px;
+   line-height: 36px;
+   color: #000000;
+}
 .products-item {
   float: left;
   width: 250px; /*уточнить размер по макету*/
+  /*color: #283136; */
+  /*color: red;*/
 }
 .our-characteristic-left-column {
   float: left;
@@ -113,10 +153,11 @@ body {
 }
 .site-examle li{
 display: inline-block;
-width: 300px; /*уточнить по макету*/
+/*width: 300px; /*уточнить по макету*/
 }
 .main-navigation ul { /*избавляемся от пробелом между блочно-строчными элементами*/
   font-size: 0;
+  list-style: none;
 }
 .main-navigation li {
   font-size: 14px;
@@ -138,4 +179,19 @@ width: 300px; /*уточнить по макету*/
 }
 .promo-description {
   float: left;
+}
+.map {
+  width: 1037px;
+  margin: 0 auto;
+  background-image: url(../images/map.png);
+  padding-top: 90px;
+  padding-left: 160px; /*падинги родителя предотвращают выпадания маргинов детей, типа h2, p ....*/
+  padding-bottom: 90px;
+}
+.map-contacts {
+  width: 250px;
+}
+.map-contacts h2, .map-contacts p {
+   margin: 0;
+   padding: 0;
 }
