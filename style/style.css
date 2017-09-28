@@ -1,18 +1,17 @@
 
 /*Вспомгательное оформление для подготовки сетки сайта*/
 /*Шапка*/
-.main-header {
-  background-color: rgba(255,0,0,0.5);
-}
+
 
 main {
   background-color: rgba(0,255,0,0.5);
 }
+
 .main-footer {
   background-color: rgba(0,0,255,0.5);
 }
 
-.container {
+/*.container  {
   background-color: rgba(10,250,10,0.5);
 }
 
@@ -32,9 +31,13 @@ main {
   background-color: rgba(255,255,10,0.5);
 }
 
+
 .main-navigation ul {
   background-color: gray;
 }
+
+
+*/
 .products {
   background-color: rgba(255,255,10,0.5);
 }
@@ -61,6 +64,46 @@ main {
 }
 /*Основное оформление*/
 
+@font-face {
+  font-weight: normal;
+  font-style: normal;
+
+  font-family: "symbols-nerds";
+  src: url("../fonts/symbols-nerds.woff") format("woff"),
+       url("../fonts/symbols-nerds.woff2") format("woff2");
+}
+
+[class^="icon-"]::before,
+[class*=" icon-"]::before {
+  display: inline-block;
+  width: 1em;
+  margin-right: 0.2em;
+  margin-left: 0.2em;
+
+  font-weight: normal;
+  line-height: 1em;
+  font-family: "symbols-nerds";
+  text-align: center;
+  text-transform: none;
+  text-decoration: inherit;
+  font-style: normal;
+  font-variant: normal;
+
+  speak: none;
+}
+
+.icon-basket::before { content: "\62"; } /* "b" */
+.icon-facebook::before { content: "\66"; } /* "f" */
+.icon-twitter::before { content: "\74"; } /* "t" */
+.icon-vk::before { content: "\76"; } /* "v" */
+.icon-up-dir::before { content: "\25b2"; } /* "▲" */
+.icon-down-dir::before { content: "\25bc"; } /* "▼" */
+.icon-circle::before { content: "\25cb"; } /* "○" */
+.icon-circle-dot::before { content: "\25cf"; } /* "●" */
+.icon-check-off::before { content: "\2610"; } /* "☐" */
+.icon-check-on::before { content: "\2611"; } /* "☑" */
+.icon-instagramm::before { content: "📷"; } /* "\1f4f7" */
+
 body {
   padding: 0;
   margin: 0;
@@ -71,11 +114,17 @@ body {
   color: #283136; /*цвеи шрифта почему-то нелогисно называется color, а не font-color*/
 }
 
-.main-navigation a {
-  color: #000000;
-  text-decoration: none;
+.main-header {
+  background-color: #eeeeee;
 }
-/*ЕСЛИ ЭТО РАСКОММЕНТИРОВАТЬ, ТО ТЕКСТ ""Мир никогда не будет прежним после того, как увидит ваш сайт!" станет тоже белым :()"*/
+
+.main-navigation a, .cart a {
+  color: #000000;
+  font-size: 14px;
+  line-height: 30px;
+  text-transform: uppercase;
+}
+
 a {
   color: #ffffff;
   text-decoration: none;
@@ -96,39 +145,84 @@ h2 {
 }
 .container {
   margin: 0 auto;
-  width: 860px;
+  width: 880px;
   padding-left: 10px;
   padding-right: 10px;
   padding-top: 25px;
   padding-bottom: 25px;
 }
 
-.logo {
-  float: left;
-}
-.main-navigation{
-  float: left;
-
-  font-family: 'Roboto', 'Arial', sans-serif;
-  font-size: 14px;
-  line-height: 30px;
-  color: #000000;
+.btn {
+  width: 240px;
+  background-color: #fb565a;
+  display: block;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: center;
+  font-size: 12px;
+  line-height: 18px;
+  border-radius: 2px;
   text-transform: uppercase;
 
 }
+.logo {
+  float: left;
+  width: 138px;
+  height: 57px;
+}
+.main-navigation{
+  float: left;
+  width: 580px; /*если не задавать ширину в явном виде, то колонки перескакивают! и так они просто мастабируюся, пока контент не будет их больше.
+  На этот случай ширину можно деать больше, и дпжн гн рлдьзоваться падингами и маргрнами, а содержимое в них выоавнивать по левому краю text-align: right */
+  margin-top: 15px;
+}
 .main-navigation li {
   display: inline-block;
+  margin-left: 40px;
 }
+.main-navigation li:first-child {
+  margin-left: 0px;
+}
+
 .main-navigation ul {
   padding: 0; /*убираем отступы слева справа */
   margin: 0; /*убираем отступы сверху  снизу*/
 }
+.main-navigation {
+  text-align: right;
+}
 .cart {
     float: right;
+    width: 159px;
+    text-align: right;
+    margin-top: 15px;
 }
+/*.cart span {
+  font-size: 16px;
+  line-height: 8.56px;
+  color: #a6a6a6;
+}*/
+
+/*вот такой парадокс... Если span явно упустить, то свойства font-size и color не подействуют,
+т.к. будет получаться, что в  элементе пусто, ведь иконка задается как псеводэлемент и вешается на свойство...*/
+span.icon-basket {
+  font-size: 16px;
+  line-height: 8.56px;
+  color: #a6a6a6;
+  padding-right: 5px;
+}
+
+
+/*.icon-basket::before {
+  content:  0x62;
+}*/
 .promo {
   clear: both;
+  /*margin-top: 50px; /* это отсут от родителя! А не от верхнего блока!!! */
 }
+/*.promo-description {
+  padding-top: 50px;
+}*/
 .promo-description b {
    font-size: 36px;
    line-height: 36px;
@@ -174,12 +268,26 @@ display: inline-block;
 .promotion {
   float: left;
 }
-.promo img {
+.promo-img {
   float: right;
+  width: 338px;
+  height:  231px;
+  padding-top: 50px;
+  padding-bottom: 70px;
 }
 .promo-description {
   float: left;
+  padding-top: 70px;
+  width: 390px;
 }
+
+.promo-description p{
+  padding: 0px; /* это лишнее, т.к. паддингов и так е было у параграфа */
+  margin: 0px;
+  padding-top: 15px;
+  padding-bottom: 20px;
+}
+
 .map {
   width: 1037px;
   margin: 0 auto;
