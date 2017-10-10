@@ -8,22 +8,23 @@
   </head>
   <body>
     <header class="main-header">
-      <div class="container">
-        <div class="logo">
+      <div class="container clearfix"> <!--временное добавление, пока нет блока с промо-слайдером -->
+        <div class="main-header__logo">
           <img src="images/logo.png" width="138" height="57" alt="Nёrd's">
         </div>
         <nav class="main-navigation">
-          <ul>
-            <li><a href="#"> Студия </a></li>
-            <li><a href="#"> Клиенты </a></li>
-            <li><a href="#"> Магазин </a></li>
-            <li><a href="#"> Контакты </a></li>
+          <ul class="main-navigation__list">
+            <li class="main-navigation__item"><a href="#"> Студия </a></li>
+            <li class="main-navigation__item"><a href="#"> Клиенты </a></li>
+            <li class="main-navigation__item"><a href="#"> Магазин </a></li>
+            <li class="main-navigation__item"><a href="#"> Контакты </a></li>
           </ul>
+          <div class="main-navigation__basket">
+            <a href="#"><span class="icon-basket"></span>Корзина</a>
+          </div>
         </nav>
-        <div class="cart">
-          <a href="#"><span class="icon-basket"></span>Корзина</a>
-        </div>
-        <div class="promo clearfix">
+
+        <!--<div class="promo clearfix">
             <div class="promo-description">
                 <b>Долго, дорого, <br> скрупулезно</b>
                 <p>Математически выверенный дизайн <br> для вашего сайта или мобильного приложения.</p>
@@ -32,7 +33,8 @@
             <div class="promo-img">
                 <img src="images/slider-1.png" width="338" height="231" alt="slider 1">
             </div>
-        <!--<div class="promo clearfix">
+        </div>
+        <div class="promo clearfix">
             <div class="promo-description">
                 <b>Любите ли вы математику, <br> как любим ее мы?</b>
                 <p>Нашим дизайнерам мы удаляем нейроны, ответственные <br> за креатив, чтобы дать им возможность все просчитать </p>
@@ -52,6 +54,7 @@
                 <img src="images/slider-3.png" width="333" height="319" alt="slider 3">
             </div>
         </div>-->
+      </div>
     </header>
     <main>
       <div class="container">
