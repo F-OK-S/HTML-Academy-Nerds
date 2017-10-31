@@ -11,6 +11,10 @@
   background-color: rgba(0,0,255,0.5);
 }
 
+.main-header {
+  background-color: rgba(0,0,255,0.5);
+}
+
 /*.test {
   background-color: red;
   width: 1500px;
@@ -63,9 +67,9 @@
 .promotion {
   background-color: rgba(200,100,100,0.5);
 }
-.map-contacts {
+/*.map-contacts {
   height: 240px;
-}
+}*/
 /*Основное оформление*/
 
 @font-face {
@@ -109,6 +113,8 @@
 .icon-instagramm::before { content: "📷"; } /* "\1f4f7" */
 
 /*глобальные настройки*/
+
+
 body {
   min-width: 1200px; /* 'надо обязательно задавать  ширину для боди (по макету), иначе при масштабировании (увеличение) экрана фон будет образаться справа. Так происходит со всеми блоками, дял которых не задана ширина*/
   padding: 0;
@@ -118,6 +124,8 @@ body {
   font-size: 16px;
   /*line-height: 22px; -- 'это лучше прописывать там, где нужно !'*/
   color: #283136; /*цвет шрифта почему-то нелогично называется color, а не font-color*/
+  /*background: url(..\images\nerds-index-PP.png);*/
+  /*background:  url(../images/nerds-index-PP.png) no-repeat center top;*/
 }
 
 a {
@@ -175,7 +183,7 @@ img {
 }
 /***********************************************************************************/
 .main-header {
-  background-color: #eeeeee; /* переменная*/
+  /*background-color: #eeeeee; /* переменная*/
 
 }
 .main-header__logo {
@@ -224,7 +232,7 @@ font-size: 14px;
     display: inline-block;
     font-size: 14px;
     line-height: 14px;
-    padding-left: 20px;
+    padding-left: 15px;
     /*float: right;
     width: 159px;
     /*text-align: right;
@@ -265,7 +273,7 @@ font-size: 14px;
 
 
 main {
-  background-color: #ffffff;
+  /*background-color: #ffffff;*/
 }
 
 
@@ -273,7 +281,7 @@ span.icon-basket {
   font-size: 16px;
   line-height: 8.56px;
   color: #a6a6a6;
-  padding-right: 5px;
+  padding-right: 10px;
 }
 
 
@@ -447,23 +455,35 @@ span.icon-basket {
 }
 
 .map {
-  /*width: 1037px;*/
-  margin: 0 auto;
-  min-height: 420px;
+  width: 100%;/*1200px;*/
+  /*margin: 0 auto;*/
+  height: 420px;
     /*background-image: url(../images/map-total.png);*/
-  background: url(../images/map.png) center center no-repeat;
+  /*background: url(../images/map.png) center center no-repeat;
         /*-webkit-background-size: cover;
         -moz-background-size: cover;
         -o-background-size: cover;*/
-        background-size: cover;
-  padding-top: 90px;
+        /*background-size: cover;*/
+  /*padding-top: 90px;
   /*padding-left: 160px; /*падинги родителя предотвращают выпадания маргинов детей, типа h2, p ....*/
-  padding-bottom: 90px;
+  /*padding-bottom: 90px;*/
 }
 .map-contacts {
   width: 250px;
+  padding: 25px;
 }
 .map-contacts h2, .map-contacts p {
    margin: 0;
    padding: 0;
 }
+.contacts {
+  position: relative;
+}
+.map-contacts {
+  position: absolute;
+  top: 90px;
+}
+/*.info {
+  position: absolute;
+    top: 90px;
+}*/

@@ -1,14 +1,141 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Nёrd's</title>
     <link rel="stylesheet" type="text/css" href="style/style.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&amp;subset=cyrillic" rel="stylesheet">
-    <title>Nёrd's</title>
+    <!--<script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A952dab7e0d1fed0c786e82d7b4a6ee5e08f4990484b8057bb9088c4b5145ed2f&amp;width=100%25&amp;height=420&amp;lang=ru_RU&amp;scroll=true&amp;id=yandex-map"></script>-->
+    <!--архив API 1.x<script src="https://api-maps.yandex.ru/1.1/index.xml" type="text/javascript"></script>
+    <script type="text/javascript">
+    window.onload = function () {
+    // Создает экземпляр карты и привязывает его к созданному контейнеру
+        var map = new YMaps.Map(document.getElementById("YMapsID"));
+
+
+
+        // Устанавливает начальные параметры отображения карты: центр карты и коэффициент масштабирования
+        map.setCenter(new YMaps.GeoPoint(30.319696, 59.939309), 16);
+        map.addControl(new YMaps.TypeControl());
+
+        // Создает объект YMaps.Zoom с пользовательскими подсказками и добавляет его на карту.
+            // Коэффициенту масштабирования 1 соответствует подсказка "Мелко",
+            // коэффициенту масштабирования 9 - "Средне",
+            // коэффициенту масштабирования 16 - "Крупно".
+            var zoom = new YMaps.Zoom({
+                noTips: true
+            });
+            map.addControl(zoom);
+
+
+            // Создает метку в центре Москвы
+            /*var placemark = new YMaps.Placemark(new YMaps.GeoPoint(30.323055, 59.938631), {hideIcon: false});
+
+            // Устанавливает содержимое балуна
+            placemark.name = "Nerd's";
+            placemark.description = "Design Studio";
+
+            // Добавляет метку на карту
+            map.addOverlay(placemark);*/
+
+            // Создание базового стиля
+            var baseStyle = new YMaps.Style();
+            baseStyle.iconStyle = new YMaps.IconStyle();
+            baseStyle.iconStyle.offset = new YMaps.Point(-50, -190);
+            baseStyle.iconStyle.size = new YMaps.Point(171, 190);
+
+            // Наследуемся от базового стиля
+            var styleFootBall = new YMaps.Style(baseStyle);
+            styleFootBall.iconStyle = new YMaps.IconStyle();
+            styleFootBall.iconStyle.href = "images/placemark.png";
+
+          /*  var placemark = new YMaps.Placemark(new YMaps.GeoPoint(30.323055, 59.938631),
+            {style: styleFootBall},
+            {openBalloonOnClick: false}
+          );
+            map.addOverlay(placemark);*/
+
+
+            pm = new ymaps.GeoObject({
+                                        geometry: { type: "Point", coordinates: item.p },
+                                        properties: { id: item.id, c: item.c }
+                                    }, {
+                                        iconLayout: myIconContentLayout,
+                                        iconShape: {
+                                            type: 'Rectangle',
+                                            coordinates: [
+                                              [-50, -60], [50, 30]
+                                            ]
+                                        },
+                                        openBalloonOnClick: false
+                                    });
+
+
+
+          /*  myMap = new ymaps.Map("map", {
+
+              .......
+
+          }, {
+
+              geoObjectOpenBalloonOnClick: false
+
+          });*/
+
+    };
+</script>-->
+
+<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+<script type="text/javascript">
+    ymaps.ready(init);
+    var myMap,
+        myPlacemark;
+
+    function init(){
+        myMap = new ymaps.Map("map", {
+            center: [59.939309, 30.319696],
+            zoom: 16
+          }, {
+            searchControlProvider: false /*как убрать поиск с карты и оределение местоположения??? */
+          });
+
+myMap.controls.remove('geolocationControl');
+myMap.controls.remove('trafficControl');
+myMap.controls.remove('fullscreenControl');
+myMap.controls.remove('searchControl');
+
+
+
+
+          myPlacemark = new ymaps.Placemark([59.938631, 30.323055], {
+              hintContent: 'Design Studio',
+              /*balloonContent: 'Столица России'*/ /*если балун путой, то он не отображается!!!!!!!!!! Урааа!!!! */
+              }, {
+              /*openBalloonOnClick: false*/ /*если балун  не пустой, то скрыть его можно этой командой-опцией*/
+              /*draggable: true*/ /*возможность перетаскивания метки*/
+              // Опции.
+                          // Необходимо указать данный тип макета.
+                          iconLayout: 'default#image',
+                          // Своё изображение иконки метки.
+                          iconImageHref: 'images/placemark.png',
+                          // Размеры метки.
+                          iconImageSize: [171, 190],
+                          // Смещение левого верхнего угла иконки относительно
+                          // её "ножки" (точки привязки).
+                          iconImageOffset: [-50, -190]
+           });
+
+          myMap.geoObjects.add(myPlacemark);
+
+
+    }
+</script>
+
   </head>
   <body>
+
     <header class="main-header">
-      <div class="container clearfix"> <!--временное добавление, пока нет блока с промо-слайдером -->
+      <div class="container"> <!--временное добавление, пока нет блока с промо-слайдером -->
         <div class="main-header__logo">
           <img src="images/logo.png" width="138" height="57" alt="Nёrd's">
         </div>
@@ -24,17 +151,17 @@
           </div>
         </nav>
 
-        <!--<div class="promo clearfix">
+        <div class="promo clearfix">
             <div class="promo-description">
                 <b>Долго, дорого, <br> скрупулезно</b>
                 <p>Математически выверенный дизайн <br> для вашего сайта или мобильного приложения.</p>
                 <a class="btn" href="#">Узнать больше</a>
             </div>
             <div class="promo-img">
-                <img src="images/slider-1.png" width="338" height="231" alt="slider 1">
+                <img src="images/slider-8.png" width="338" height="231" alt="slider 1">
             </div>
         </div>
-        <div class="promo clearfix">
+        <!--<div class="promo clearfix">
             <div class="promo-description">
                 <b>Любите ли вы математику, <br> как любим ее мы?</b>
                 <p>Нашим дизайнерам мы удаляем нейроны, ответственные <br> за креатив, чтобы дать им возможность все просчитать </p>
@@ -118,17 +245,20 @@
             </ul>
         </div>
       </div>
-      <section class="map">
-        <section class="map-contacts">
-            <h2>Nerds design studio</h2>
-            <p> 191186, Санкт-Петербург, <br>
-              ул. Б. Конюшенная, 19/8 <br>
-              <br>
-              тел. +7(812)275-75-75
-            </p>
-            <a class="btn" href="#">Напишите нам</a>
-        </section>
-      </section>
+      <div class="contacts">
+        <section id="map" class="map"></section>
+        <div class="info container clearfix ">
+          <section class="map-contacts">
+              <h2>Nerds design studio</h2>
+              <p> 191186, Санкт-Петербург, <br>
+                ул. Б. Конюшенная, 19/8 <br>
+                <br>
+                тел. +7(812)275-75-75
+              </p>
+              <a class="btn" href="#">Напишите нам</a>
+          </section>
+        </div>
+      </div>
     </main>
     <footer class="main-footer">
       <div class="container clearfix">
@@ -144,5 +274,6 @@
         </section>
       </div>
     </footer>
+
   </body>
 </html>
