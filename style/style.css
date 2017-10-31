@@ -6,9 +6,9 @@
   background-color: rgba(0,0,255,0.5);
 }
 
-.main-header {
+/*.main-header {
   background-color: rgba(0,0,255,0.5);
-}
+}*/
 
 .site-examle{
   background-color: rgba(0,0,250,0.5);
@@ -123,7 +123,7 @@ img {
 }
 /***********************************************************************************/
 .main-header {
-  /*background-color: #eeeeee; /* переменная*/
+  background-color: #eeeeee; /* переменная*/
 }
 
 .main-header__logo {
@@ -165,9 +165,30 @@ img {
     padding-left: 15px;
 }
 
-.promo {
+#slider {
   clear: both;
   position: relative;
+  height: 350px;
+}
+
+.promo {
+  clear: both;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  opacity: 0;
+  z-index: 1;
+
+  -webkit-transition: opacity 1s;
+  -moz-transition: opacity 1s;
+  -o-transition: opacity 1s;
+  transition: opacity 1s;
+}
+
+.promo--show {
+  opacity: 1;
+  z-index: 2;
 }
 
 .promo__description {
@@ -178,11 +199,7 @@ img {
 }
 
 .promo__img {
-  position: absolute;
-  right: 0;
-  /*bottom: 0;*/
-  /*float: right;*/
-  /*width: 380px;*/
+  float: right;
   width: 341px;
   height: 310px;
   padding-top: 40px;

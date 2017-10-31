@@ -63,36 +63,38 @@
                         <a class="main-navigation__link" href="#"><span class="icon-basket"></span>Корзина</a>
                     </div>
                 </nav>
-                <div class="promo clearfix">
-                    <div class="promo__description">
-                        <b class="promo__slogan">Долго, дорого, <br> скрупулезно.</b>
-                        <p class="promo__text">Математически выверенный дизайн <br> для вашего сайта или мобильного приложения.</p>
-                        <a class="btn" href="#">Узнать больше</a>
+                <div id="slider">
+                    <div class="promo promo--show clearfix">
+                        <div class="promo__description">
+                            <b class="promo__slogan">Долго, дорого, <br> скрупулезно.</b>
+                            <p class="promo__text">Математически выверенный дизайн <br> для вашего сайта или мобильного приложения.</p>
+                            <a class="btn" href="#">Узнать больше</a>
+                        </div>
+                        <div class="promo__img">
+                            <img src="images/pm1.png" width="341" height="310" alt="promo-img-1">
+                        </div>
                     </div>
-                    <div class="promo__img">
-                        <img src="images/pm1.png" width="341" height="310" alt="promo-img-1">
+                    <div class="promo clearfix">
+                        <div class="promo__description">
+                            <b class="promo__slogan">Любите ли вы математику,  как любим ее мы?</b>
+                            <p class="promo__text">Нашим дизайнерам мы удаляем нейроны, ответственные за креатив, чтобы дать им возможность все просчитать </p>
+                            <a class="btn" href="#">Узнать больше</a>
+                        </div>
+                        <div class="promo__img">
+                            <img src="images/pm2.png" width="341" height="310" alt="promo-img-2">
+                        </div>
                     </div>
-                </div>
-                <div  class="promo clearfix">
-                    <div class="promo__description">
-                        <b class="promo__slogan">Любите ли вы математику,  как любим ее мы?</b>
-                        <p class="promo__text">Нашим дизайнерам мы удаляем нейроны, ответственные за креатив, чтобы дать им возможность все просчитать </p>
-                        <a class="btn" href="#">Узнать больше</a>
+                    <div class="promo clearfix">
+                        <div class="promo__description">
+                            <b class="promo__slogan">Только наркотики, <br>  только хардкор!</b>
+                            <p class="promo__text">Все дизайнерские решения в нашей компании принимаются только под воздействием качественных галлюциногенов</p>
+                            <a class="btn" href="#">Узнать больше</a>
+                        </div>
+                        <div class="promo__img">
+                            <img src="images/pm3.png" width="341" height="310" alt="promo-img-3">
+                        </div>
                     </div>
-                    <div class="promo__img">
-                        <img src="images/pm2.png" width="341" height="310" alt="promo-img-2">
-                    </div>
-                </div>
-                <div  class="promo clearfix">
-                    <div class="promo__description">
-                        <b class="promo__slogan">Только наркотики, <br>  только хардкор!</b>
-                        <p class="promo__text">Все дизайнерские решения в нашей компании принимаются только под воздействием качественных галлюциногенов</p>
-                        <a class="btn" href="#">Узнать больше</a>
-                    </div>
-                    <div class="promo__img">
-                        <img src="images/pm3.png" width="341" height="310" alt="promo-img-3">
-                    </div>
-                </div>
+              </div>
             </div>
         </header>
     <main>
@@ -186,6 +188,22 @@
         </section>
       </div>
     </footer>
+
+<script type="text/javascript">
+    var slides = document.querySelectorAll('#slider .promo');
+    var currentSlide = 0;
+    var slideInterval = setInterval(nextSlide,3000);
+
+    function nextSlide() {
+
+      slides[currentSlide].className = 'promo';
+
+      currentSlide = (currentSlide+1)%slides.length;
+
+      slides[currentSlide].className = 'promo promo--show';
+
+    }
+</script>
 
   </body>
 </html>
