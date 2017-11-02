@@ -14,9 +14,9 @@
         function init(){
             myMap = new ymaps.Map("map", {
                 center: [59.939309, 30.319696],
-                zoom: 16
+                zoom: 17
               }, {
-                searchControlProvider: false /*как убрать поиск с карты и оределение местоположения??? */
+                /*searchControlProvider: false /*как убрать поиск с карты и оределение местоположения??? */
               });
 
         myMap.controls.remove('geolocationControl');
@@ -64,10 +64,22 @@
                     </div>
                 </nav>
                 <div id="slider">
+
+                    <!--<input id="slideFirst" type="radio" name="slide" value="slide-1" checked="checked">
+            				<input id="slideSecond" type="radio" name="slide" value="slide-2">
+            				<input id="slideThree" type="radio" name="slide" value="slide-3">-->
+
+            				<!--<div class="slider-controls">
+              					<label for="slideFirst"></label>
+              					<label for="slideSecond"></label>
+              					<label for="slideThree"></label>
+            				</div>-->
+
                     <div class="promo promo--show clearfix">
                         <div class="promo__description">
                             <b class="promo__slogan">Долго, дорого, <br> скрупулезно.</b>
-                            <p class="promo__text">Математически выверенный дизайн <br> для вашего сайта или мобильного приложения.</p>
+                            <p class="promo__text">Математически выверенный дизайн <br> для вашего сайта или мобильного приложения.
+                                        </p>
                             <a class="btn" href="#">Узнать больше</a>
                         </div>
                         <div class="promo__img">
@@ -94,6 +106,15 @@
                             <img src="images/pm3.png" width="341" height="310" alt="promo-img-3">
                         </div>
                     </div>
+
+
+                    <div class="slide-controls slide-controls--no-js">
+                        <input id="slideFirst" class="slide-controls__item"  type="radio" checked="checked">
+                        <input id="slideSecond" class="slide-controls__item"  type="radio" >
+                        <input id="slideThird" class="slide-controls__item"  type="radio" >
+                    </div>
+
+
               </div>
             </div>
         </header>
@@ -102,58 +123,58 @@
         <article class="products clearfix">
           <section class="products-item websyte">
             <img src="images/website.png" alt="website">
-            <h2>Веб-сайты</h2>
-            <p>Мир никогда не будет прежним после того, как увидит ваш сайт!</p>
-            <a class="btn" href="#">Заказать</a>
+            <h2 class="products__title">Веб-сайты</h2>
+            <p class="products__text">Мир никогда не будет прежним после того, как увидит ваш сайт!</p>
+            <a class="btn products__btn" href="#">Заказать</a>
           </section>
           <section class="products-item app">
             <img src="images/app.png" alt="app">
-            <h2>Приложения</h2>
-            <p>Покорите топ-10 приложений в AppStore и Google Play</p>
-            <a class="btn" href="#">Заказать</a>
+            <h2 class="products__title">Приложения</h2>
+            <p class="products__text">Покорите топ-10 приложений <br>в AppStore и Google Play</p>
+            <a class="btn products__btn" href="#">Заказать</a>
           </section>
           <section class="products-item presentation">
             <img src="images/presentation.png" alt="presentation">
-            <h2>Презентации</h2>
-            <p>Вы даже не подозреваете, насколько вы изумительны!</p>
-            <a class="btn" href="#">Заказать</a>
+            <h2 class="products__title">Презентации</h2>
+            <p class="products__text">Вы даже не подозреваете, насколько вы изумительны!</p>
+            <a class="btn products__btn" href="#">Заказать</a>
           </section>
         </article>
         <article class="our-characteristic clearfix">
-          <div class="our-characteristic-left-column">
-            <h2>Мы - маленькая, но гордая <br> дизайн-студия из Краснодара.</h2>
+          <div class="our-characteristic__left-column">
+            <h2>Мы &mdash; маленькая, но гордая <br> дизайн-студия из Краснодара.</h2>
             <p>Исповедуем принципы минимализма и чистоты. Ставим математический расчет выше креатива.
             Работаем не покладая рук, как роботы.</p>
             <section class="development">
               <span class="capslock">Выполняем заказы на разработку</span>
-              <ul>
-                <li>Веб-сайтов любой сложности</li>
-                <li>Мобильных приложений для iOS и  Android</li>
-                <li>Слайдшоу и видео для корпоративных презентаций</li>
+              <ul class="our-characteristic__list">
+                <li class="our-characteristic__item">Веб-сайтов любой сложности</li>
+                <li class="our-characteristic__item">Мобильных приложений для iOS и  Android</li>
+                <li class="our-characteristic__item" >Слайдшоу и видео для корпоративных презентаций</li>
               </ul>
             </section>
           </div>
-          <div class="our-characteristic-right-column">
-            <img src="images/logo-since-2004.png" alt="Nёrd's">
-            <section>
+          <div class="our-characteristic__right-column">
+            <img class="our-characteristic__logo" src="images/logo-since-2004.png" alt="Nёrd's">
+            <section >
               <span class="capslock">Как мы работаем</span>
-              <ul>
-              <li>С самоотдачей 146% </li>
-              <li>Соблюдая сроки на 100%</li>
-              <li>По предоплате 50%</li>
+              <ul class="our-characteristic__list">
+              <li class="our-characteristic__item">С самоотдачей 146% </li>
+              <li class="our-characteristic__item">Соблюдая сроки на 100%</li>
+              <li class="our-characteristic__item">По предоплате 50%</li>
             </ul>
             </section>
           </div>
         </article>
         <div class="site-example">
-            <ul>
-              <li>
+            <ul class="site-example__list">
+              <li class="site-example__item">
                 <a href="#"><img src="images/glukhanko.png" alt="glukhanko"></a>
               </li>
-              <li>
+              <li class="site-example__item">
                 <a href="#"><img src="images/htmlacademy.png" alt="htmlacademy"></a>
               </li>
-              <li>
+              <li class="site-example__item">
                 <a href="#"><img src="images/borodinski.png" alt="borodinski"></a>
               </li>
             </ul>
@@ -163,33 +184,35 @@
         <section id="map" class="map"></section>
         <div class="info container clearfix ">
           <section class="map-contacts">
-              <h2>Nerds design studio</h2>
-              <p> 191186, Санкт-Петербург, <br>
-                ул. Б. Конюшенная, 19/8 <br>
-                <br>
-                тел. +7(812)275-75-75
+              <h2 class="map-contacts__title">Nerds design studio</h2>
+              <p class="map-contacts__address"> 191186, Санкт-Петербург, <br>
+                ул. Б. Конюшенная, д. 19/8
               </p>
-              <a class="btn" href="#">Напишите нам</a>
+              <p class="map-contacts__tel">тел. +7 (812) 275-75-75</p>
+              <a class="btn map-contacts__btn" href="#">Напишите нам</a>
           </section>
         </div>
       </div>
     </main>
     <footer class="main-footer">
       <div class="container clearfix">
-        <section class="social">
-          <a class="social-btn  social-btn-vk" href="#"> В контакте </a>
-          <a class="social-btn  social-btn-f" href="#"> Фейсбук </a>
-          <a class="social-btn  social-btn-inst" href="#"> Инстаграмм </a>
-        </section>
+        <div class="social">
+          <a class="social-btn" href="https://www.vk.com/"><span class="icon-vk"></span></a>
+          <a class="social-btn" href="https://www.facebook.com/"><span class="icon-facebook"></span></a>
+          <a class="social-btn" href="https://www.instagram.com/"><span class="icon-instagram"></span></a>
+        </div>
         <section class="promotion">
-          <p><span>Давайте дружить, это выгодно!</span><br>
-            Скидка 10% для друзей из социальных сетей
-          </p>
+          <div class="promotion__title">Давайте дружить, это выгодно!</div>
+          <div class="promotion__text">Скидка 10% для друзей из социальных сетей.</div>
         </section>
       </div>
     </footer>
 
 <script type="text/javascript">
+
+var controls = document.querySelector('.slide-controls--no-js');
+controls.className = 'slide-controls';
+
     var slides = document.querySelectorAll('#slider .promo');
     var currentSlide = 0;
     var slideInterval = setInterval(nextSlide,3000);

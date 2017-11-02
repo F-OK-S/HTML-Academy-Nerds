@@ -2,7 +2,7 @@
 /*Вспомгательное оформление для подготовки сетки сайта*/
 /*Шапка*/
 
-.main-footer {
+/*.main-footer {
   background-color: rgba(0,0,255,0.5);
 }
 
@@ -10,7 +10,7 @@
   background-color: rgba(0,0,255,0.5);
 }*/
 
-.site-examle{
+/*.site-examle{
   background-color: rgba(0,0,250,0.5);
 }
 .social {
@@ -18,7 +18,7 @@
 }
 .promotion {
   background-color: rgba(200,100,100,0.5);
-}
+}*/
 
 /*Основное оформление*/
 
@@ -60,13 +60,13 @@
 .icon-circle-dot::before { content: "\25cf"; } /* "●" */
 .icon-check-off::before { content: "\2610"; } /* "☐" */
 .icon-check-on::before { content: "\2611"; } /* "☑" */
-.icon-instagramm::before { content: "📷"; } /* "\1f4f7" */
+.icon-instagram::before { content: "📷"; } /* "\1f4f7" */
 
 /*глобальные настройки*/
 /*для файла scaffolding.less*/
 
 body {
-  min-width: 1200px; /* 'надо обязательно задавать  ширину для боди (по макету), иначе при масштабировании (увеличение) экрана фон будет обрезаться справа. Так происходит со всеми блоками, дял которых не задана ширина*/
+  min-width: 900px; /* 'надо обязательно задавать  ширину для боди (по макету), иначе при масштабировании (увеличение) экрана фон будет обрезаться справа. Так происходит со всеми блоками, дял которых не задана ширина*/
   padding: 0;
   margin: 0;
   font-family: 'Roboto', 'Arial', sans-serif;
@@ -168,8 +168,27 @@ img {
 #slider {
   clear: both;
   position: relative;
-  height: 350px;
+  min-height: 350px;
+
+  /*background-color: pink;*/
 }
+
+.slide-controls {
+  position: absolute;
+  bottom: 80px;
+  left: 50%;
+  /*right: 50%;*/
+  /*margin-bottom: 350px;*/
+}
+
+.slide-controls--no-js{
+  display: none;
+}
+
+.slide-controls__item {
+
+}
+
 
 .promo {
   clear: both;
@@ -180,6 +199,7 @@ img {
   opacity: 0;
   z-index: 1;
 
+
   -webkit-transition: opacity 1s;
   -moz-transition: opacity 1s;
   -o-transition: opacity 1s;
@@ -189,13 +209,14 @@ img {
 .promo--show {
   opacity: 1;
   z-index: 2;
+
 }
 
 .promo__description {
   float: left;
   padding-top: 70px;
   padding-bottom: 78px;
-  width: 463px;
+  width: 465px;
 }
 
 .promo__img {
@@ -240,7 +261,7 @@ span.icon-basket {
 
 .products {
   margin-top: 55px;
-  padding-bottom: 80px;
+  padding-bottom: 79px;
   border-bottom: 2px  solid #eeeeee;
 }
 .products-item {
@@ -256,45 +277,52 @@ span.icon-basket {
   padding-right: 0px;
 }
 
-.products-item p{
+
+.products__title{
+  font-size: 18px;
+  line-height: 30px;
+  padding: 0;
+  margin: 0;
+  margin-top: 23px;
+}
+
+.products__text{
   font-size: 15px;
   line-height: 22px;
   padding: 0;
   margin: 0;
   margin-top: 15px;
-  margin-bottom: 20px;
+  margin-bottom: 27px;
 }
 
-.products-item h2{
-  font-size: 18px;
-  line-height: 30px;
-  padding: 0;
-  margin: 0;
-  margin-top: 20px;
+.products__btn{
+  width: 140px;
 }
+
 
 
 .our-characteristic {
-  padding-top: 52px;
-  padding-bottom: 70px;
+  padding-top: 60px;
+  padding-bottom: 46px;
   border-bottom: 2px solid #eeeeee
 }
 
-.our-characteristic-left-column {
+.our-characteristic__left-column {
   float: left;
-  width: 620px;
+  width: 572px;
+  margin-top: 10px;
 }
 
-.our-characteristic-left-column h2, p {
+.our-characteristic__left-column h2, p {
   padding: 0px;
   margin: 0px;
 }
 
-.our-characteristic-left-column  p {
-  padding-bottom: 50px;
+.our-characteristic__left-column  p {
+  padding-bottom: 48px;
 }
 
-.our-characteristic-left-column h2 {
+.our-characteristic__left-column h2 {
   font-size: 36px;
   line-height: 36px;
   text-transform: none;
@@ -302,34 +330,50 @@ span.icon-basket {
   margin-bottom: 20px;
 }
 
-.our-characteristic ul {
+.our-characteristic__list {
   margin-top: 25px;
   margin-bottom: 0px;
+  list-style-image: url(../images/marker.png);
+  padding-left: 33px;
 }
 
-.our-characteristic-right-column {
+ .our-characteristic__item{
+   list-style-type: none;
+   padding-left: 2px;
+   padding-bottom: 25px;
+ }
+
+/* .order__item:before {
+     content: "—" /* Добавляем в качестве маркера символ */
+    /*}*/
+
+.our-characteristic__right-column {
   float: right;
   width: 240px;
 }
 
-.our-characteristic-right-column img{
+.our-characteristic__logo{
   display: block;
-  margin-bottom: 60px;
+  margin-bottom: 70px;
 }
+
+
+
 
 .capslock {
   text-transform: uppercase;
 }
 
 .site-example{
-  padding-top: 40px;
-  padding-bottom: 35px;
-  margin-bottom: 87px;
+  padding-top: 46px;
+  padding-bottom: 32px;
+  /*padding-left: 12px;*/
+  margin-bottom: 84px;
   border-bottom: 2px solid #eeeeee;
 
 }
 
-.site-example ul {
+.site-example__list{
   padding: 0;
   margin: 0;
   line-height: 0; /*ul - являются строчными элементами, поэтому у них вокруг есть отступы, обусловленные высотой строки*/
@@ -337,11 +381,11 @@ span.icon-basket {
   list-style: none;
 }
 
-.site-example li {
+.site-example__item {
   display: inline-block;
   vertical-align: middle;
-  width: 240px;
-  padding-right: 79px;
+  width: 230px;
+  padding-right: 90px;
   /*width: 300px; /*уточнить по макету*/
 }
 
@@ -353,23 +397,55 @@ span.icon-basket {
   display: block;
 }
 
+
+
 .promotion p {
   margin: 0;
 }
 .map-contacts {
   background-color: #ffffff; /*уточнить по макету*/
 }
+
+.main-footer{
+  padding-bottom: 75px;
+}
 .social {
   float: left;
+  /*width: 300px;*/
+  font-size: 0px;
+  padding-top: 29px;
+}
+
+.social-btn {
+ background-color: #e1e1e1;
+ padding: 16px;
+ border-radius: 100%;
+ margin-right: 25px;
+ font-size: 23px;
+ display: inline-block;
+
 }
 .promotion {
   float: left;
+  margin-left: 53px;
+  padding-top: 20px;
+}
+
+.promotion__title{
+
+  font-size: 36px;
+  margin-bottom: 10px;
+
+}
+
+.promotion__text{
+  font-size: 16px;
 }
 
 .map {
   width: 100%;/*1200px;*/
   /*margin: 0 auto;*/
-  height: 420px;
+  height: 416px;
     /*background-image: url(../images/map-total.png);*/
   /*background: url(../images/map.png) center center no-repeat;
         /*-webkit-background-size: cover;
@@ -381,19 +457,38 @@ span.icon-basket {
   /*padding-bottom: 90px;*/
 }
 .map-contacts {
-  width: 250px;
-  padding: 25px;
+  width: 210px;
+  padding-right: 20px;
+  padding-left: 20px;
+  padding-top: 25px;
+  padding-bottom: 25px;
 }
-.map-contacts h2, .map-contacts p {
+.map-contacts__title, .map-contacts_address {
    margin: 0;
    padding: 0;
 }
+
+.map-contacts__title{
+  margin-bottom: 12px;
+  font-size: 16px;
+}
+
+.map-contacts__tel{
+  margin-top: 21px;
+}
+
 .contacts {
   position: relative;
 }
 .map-contacts {
   position: absolute;
-  top: 90px;
+  top: 88px;
+}
+
+.map-contacts__btn{
+  width: 204px;
+  margin-left: 3px;
+  margin-top: 30px;
 }
 /*.info {
   position: absolute;
